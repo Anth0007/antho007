@@ -1,25 +1,46 @@
-# Ejemplo de plantilla de Issues de GitHub
+name: Reportar un bug
+description: Reportar un error del programa
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: ¿Qué error encontraste?
+      description: Explica el problema.
+    validations:
+      required: true
 
-Este paquete contiene una plantilla de formulario para reportar errores (bugs).
+  - type: textarea
+    id: pasos
+    attributes:
+      label: ¿Cómo reproducir el error?
+      description: Escribe los pasos para que podamos repetirlo.
+      placeholder: |
+        1. Abrir el programa
+        2. Pulsar un botón
+        3. Observar el error
+    validations:
+      required: true
 
-## Cómo instalarla en tu repositorio
+  - type: textarea
+    id: esperado
+    attributes:
+      label: ¿Qué debería suceder?
+    validations:
+      required: true
 
-1. Descomprime el ZIP.
-2. En tu repositorio de GitHub, entra en **Code**.
-3. Pulsa **Add file → Upload files**.
-4. Sube la carpeta `.github` conservando esta ruta:
-   `.github/ISSUE_TEMPLATE/bug_report.yml`
-5. Pulsa **Commit changes**.
-6. Entra en **Issues → New issue** y selecciona **Reporte de bug**.
+  - type: textarea
+    id: ocurrido
+    attributes:
+      label: ¿Qué sucedió realmente?
+    validations:
+      required: true
 
-Si prefieres crear el archivo manualmente, abre `.github/ISSUE_TEMPLATE/bug_report.yml` y copia el contenido.
-
-## Ejemplo de reporte para probar
-
-- Descripción: La aplicación se cierra al pulsar Guardar.
-- Pasos: 1) Abrir la aplicación. 2) Pulsar Guardar.
-- Esperado: El archivo se guarda correctamente.
-- Real: La aplicación se cierra.
-- Sistema: Windows 11.
-
-Nota: la plantilla aparece en el selector de nuevos Issues después de que el archivo se haya subido y guardado en la rama predeterminada del repositorio.
+  - type: input
+    id: sistema
+    attributes:
+      label: Sistema operativo
+      placeholder: Windows 11, Linux, etc.
+    validations:
+      required: true
