@@ -1,0 +1,63 @@
+name: "Reporte de bug"
+description: "Usa este formulario para reportar un error del proyecto."
+title: "[BUG] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por ayudar a mejorar el proyecto. Completa los campos obligatorios.
+
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: "Descripción del error"
+      description: "Explica qué problema encontraste."
+      placeholder: "Ejemplo: al pulsar Guardar, la aplicación se cierra."
+    validations:
+      required: true
+
+  - type: textarea
+    id: pasos
+    attributes:
+      label: "Pasos para reproducir el error"
+      description: "Escribe los pasos en orden para repetir el problema."
+      placeholder: |
+        1. Abrir la aplicación
+        2. Pulsar Guardar
+        3. Observar el error
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: "¿Qué esperabas que sucediera?"
+      placeholder: "Ejemplo: que el archivo se guardara correctamente."
+    validations:
+      required: true
+
+  - type: textarea
+    id: ocurrido
+    attributes:
+      label: "¿Qué sucedió realmente?"
+      placeholder: "Ejemplo: la aplicación se cerró sin guardar."
+    validations:
+      required: true
+
+  - type: input
+    id: sistema
+    attributes:
+      label: "Sistema operativo y versión"
+      placeholder: "Ejemplo: Windows 11"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencias
+    attributes:
+      label: "Capturas de pantalla o registros (opcional)"
+      description: "Añade información que ayude a investigar el problema."
+    validations:
+      required: false
